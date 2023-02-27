@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @RestController
-@RequestMapping("api/service-one")
+@RequestMapping("/service-one")
 public class ServiceOneController {
 
     @Autowired
