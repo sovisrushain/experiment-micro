@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @RestController
-@RequestMapping("/service-one")
+@RequestMapping("/so")
 public class ServiceOneController {
 
     @Autowired
     private WebClient.Builder webClientBuilder;
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public String greet(@PathVariable String id) {
         String show = webClientBuilder.build()
                 .get()
-                .uri("http://service-two/api/service-two/" + id)
+                .uri("http://service-two/st/" + id)
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
